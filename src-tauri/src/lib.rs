@@ -1,4 +1,3 @@
-#[cfg_attr(mobile, tauri::mobile_entry_point)]
 mod keys;
 
 use futures_util::stream::StreamExt;
@@ -295,6 +294,7 @@ fn download_leaderboard(app: AppHandle, content: String) {
     })
 }
 
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
 #[tauri::command]
 fn get_keys_config(key: i8) -> String {
     match key {
